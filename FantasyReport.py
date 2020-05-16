@@ -14,8 +14,8 @@ from reportlab.lib.styles import ParagraphStyle
 
 
 #Input your own league ID and the year that you are interested in
-
-league_id = 61075
+#League ID is 5 digit code that is specific to your fantasy league
+league_id = #####
 tm_name = int(input('What team are you interested in? (1-12) \n 1:Grant, 2:Reeve, 3:Sturdy, 4:Ne ,5:Jamal, 6:Austin, 7:Danny, 8:Rob, 9:TRay, 10:Crowe, 11:Fawal, 12:Peyton'))
 #tm_name = 4
 #year = 2019
@@ -33,8 +33,8 @@ xlabels = dict.values()
 if int(year) < 2019:
     url = "https://fantasy.espn.com/apis/v3/games/ffl/leagueHistory/" + \
           str(league_id) + "?seasonId=" + str(year)
-    r = requests.get(url, cookies={"swid": "{F3173C47-ECAE-4E0F-973C-47ECAE2E0F8F}",
-                                   "espn_s2": "AEBLjLzYKQejWSpl8mCFdjSvKAB3jJdGJWwBpVhQpFzZ4RJAmUkoyuP6uC%2BQdSY3UCys97eLDdhBmS7r4LqBtDhIBk%2BwL50w7MltRyiBDp2CGobL1%2FzxlMXwTLqDZVr3srlg9lSxlsAB72acFfGxAU5vCg6TdANLe0QEQ5s8K0MTUBP3fYH6HyuHt5MLk789wBeoZmNvVtY0Ehu5r7%2Bk7mbl4L6LzN7js4KOL9Lim6buzaa%2FaWrYJBoJRdjffqLjiLrsUktto9Qgnr5Wat01i34v"}
+    r = requests.get(url, cookies={"swid": "{#######-######-####-######-######}", #swid and espn_s2 are specific to the account
+                                   "espn_s2": "########"}
                      , params={"view": "mMatchup"})
     d = r.json()[0]
     df_temp = []
